@@ -77,7 +77,7 @@
 
         <div>
         <div class="loyal-newsletter">"There's no friend as loyal as a good book"</div>
-        <button class="btn-newsletter mt-1" type="button">Subsribe to Our News Letter</button>
+        <button class="btn-newsletter mt-4" type="button">Subscribe to Our News Letter</button>
         </div>
 
       </div>
@@ -88,7 +88,7 @@
       <nav class="navbar navbar-expand-lg navbar-footer">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
-            <img class="logo-footer" src="https://drive.google.com/uc?export=view&id=1LxeeQ8vWNt9cQE6oY6hez-WDR2sZG1MB" alt="Logo Bookpedia">
+            <img class="logo-footer" src="https://drive.google.com/uc?export=view&id=1iV6phfhqqKfZmskDOWDhDnPpkhOBIMjx" alt="Logo Bookpedia">
         </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -97,7 +97,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link footer" href="#">
+                <a class="nav-link footer" href="/about-us">
                     About Us
                 </a>
               </li>
@@ -120,14 +120,17 @@
       </nav>
 
       <style>
-
+          html{
+            width: 100%;
+            height: 100%;
+          }
 
           .loyal-newsletter
           {
             margin-top: 15%;
             font-weight: bold;
             color: #8F3F09;
-            font-size: 100px;
+            font-size: 48px;
             text-align: center;
           }
 
@@ -137,8 +140,8 @@
             margin-left: 7%;
             color: white;
             width: 85%;
-            height: 7%;
-            font-size: 35px;
+            /* height: 7%; */
+            font-size: 32px;
             font-weight: bold;
             text-align: center;
           }
@@ -153,8 +156,8 @@
 
           .newsletter-mascot
           {
-            width: 40%;
-            height: 40%;
+            width: 36%;
+            height: 36%;
           }
 
           .footer:hover
@@ -210,6 +213,30 @@
           {
               width: 500px;
               height: 80px;
+          }
+
+          /* ABOUT US PAGE */
+          .about{
+            font-size: 64px;
+            margin-top: 64px;
+            color: #9F2F00;
+          }
+
+          .about p{
+            font-size: 24px;
+            color: #B1580E;
+          }
+
+          .social-media p{
+            color: #9F2F00;
+          }
+
+          .bookpedia-social-media img{
+            width: 5vh;
+          }
+
+          .bookpedia-social-media{
+            font-size: 24px;
           }
       </style>
 
