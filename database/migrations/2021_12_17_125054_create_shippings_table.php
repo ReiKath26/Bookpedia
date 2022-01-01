@@ -15,11 +15,12 @@ class CreateShippingsTable extends Migration
     {
         Schema::create('shippings', function (Blueprint $table) {
             $table->id();
-            $table->string('shipment_company')->unique();
+            $table->string('shipment_company');
             $table->string('shipment_type');
             $table->bigInteger('shipment_price');
             $table->integer('min_shipment_duration');
             $table->integer('max_shipment_duration');
+            $table->string('status')->default('no');
             $table->timestamps();
         });
     }

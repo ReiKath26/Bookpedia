@@ -24,6 +24,9 @@ class CreateTransactionHeadsTable extends Migration
             $table->unsignedBigInteger('shipping_address');
             $table->foreign('shipping_address')->references('id')->on('shipping-addresses')->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('total');
+            $table->string('status')->default('unpaid');
+            $table->unsignedBigInteger('cart_id');
+            $table->foreign('cart_id')->references('id')->on('carts');
             $table->timestamps();
         });
     }

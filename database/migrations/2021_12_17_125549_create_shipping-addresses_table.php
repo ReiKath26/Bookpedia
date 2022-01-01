@@ -20,6 +20,10 @@ class CreateShippingAddressesTable extends Migration
             $table->string('receiver_name');
             $table->longText('address');
             $table->string('phone');
+            $table->string('province');
+            $table->string('city');
+            $table->string('postcode');
+            $table->string('status');
             $table->timestamps();
         });
     }

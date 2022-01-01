@@ -26,6 +26,9 @@ class CreateBooksTable extends Migration
             $table->longText('description');
             $table->bigInteger('price');
             $table->integer('year');
+            $table->string('language');
+            $table->integer('page');
+            $table->string('img');
             $table->integer('stock');
             $table->integer('sold');
             $table->timestamps();

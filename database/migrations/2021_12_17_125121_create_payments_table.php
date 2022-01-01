@@ -19,6 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_type');
             $table->string('payment_desc');
             $table->bigInteger('admin_fee');
+            $table->string('status')->default('no');
             $table->timestamps();
         });
     }
