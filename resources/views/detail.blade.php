@@ -45,6 +45,38 @@
 
 @section('page-content')
 
-<h3>INSERT HERE</h3>
+<img class="detail-image" src={{$book['img']}}>
+
+<div class="d-flex">
+
+<div class="header-detail">
+<h5>{{$book->author['name']}}</h5>
+<h3>{{$book['title']}}</h3>
+<h4>Description</h4>
+<h6>{{$book['description']}}
+
+</div>
+
+<div class="buy">
+
+<h6>Stock: {{$book['stock']}}</h6>
+
+<div class="card m-3" id="cat-card" style="width: 20vw; height: 10vh">
+
+<form action={{ route('cartDetail.store')}} method="POST">
+    @csrf
+    <input type="hidden" name="book_id" value={{$book['id']}}>
+    <label>Quantity: </label>
+    <input name="qty" type="number"><br>
+
+    <button class="button btn-primary" type="submit">Add to My Cart</button>
+
+    </form>
+
+</div>
+</div>
+
+</div>
 
 @endsection
+

@@ -12,7 +12,7 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" href="#">
             <img class="logo" src="https://drive.google.com/uc?export=view&id=1DR4SRIkYl6IboNzavnwqC4QK0cx6jQ2A" alt="Logo Bookpedia">
         </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,33 +22,6 @@
                   </svg>
             </span>
           </button>
-          <div class="navbar-center" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-
-            <form class="d-flex">
-              <span class="input-group-text" id="basic-addon1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFFFFF" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg>
-              </span>
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-
-            <div class="navbar-menu d-flex">
-                @yield('navbar-menu')
-            </div>
-
-        </ul>
-          </div>
-        </div>
       </nav>
 
       <div class="page-content">
@@ -60,19 +33,6 @@
 
 
 
-      <div class="newsletter d-flex">
-        <img class="newsletter-mascot" src="https://drive.google.com/uc?export=view&id=1atyTTajIi5TGFKGVNXD13WTYLFSfHmHl" alt="mascot">
-
-        <div>
-        <div class="loyal-newsletter">"There's no friend as loyal as a good book"</div>
-        <button class="btn-newsletter mt-1" type="button">Subsribe to Our News Letter</button>
-        </div>
-
-      </div>
-
-
-
-
       <nav class="navbar navbar-expand-lg navbar-footer">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
@@ -81,30 +41,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
 
-            <li class="nav-item">
-                <a class="nav-link footer" href="/about-us">
-                    About Us
-                </a>
-              </li>
-
-            <li class="nav-item">
-                <a class="nav-link footer" href="/all-books">
-                    See All Books
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link footer" href="/contact-us">
-                  Contact Us
-                </a>
-            </li>
-
-        </ul>
-          </div>
-        </div>
       </nav>
 
       <style>
