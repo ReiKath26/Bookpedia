@@ -13,7 +13,7 @@ class book extends Model
 
     public function author()
     {
-        return $this->belongsTo(author::class);
+        return $this->belongsTo(author::class, 'author_id');
     }
 
     public function publisher()
@@ -24,5 +24,15 @@ class book extends Model
     public function category()
     {
         return $this->belongsTo(Categories::class);
+    }
+
+    public function cartDet()
+    {
+        return $this->hasMany(cart_detail::class);
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(transaction_detal::class);
     }
 }

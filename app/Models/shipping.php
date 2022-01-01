@@ -9,6 +9,9 @@ class shipping extends Model
 {
     use HasFactory;
 
+    protected $table = 'shippings';
+    protected $guarded = ['id'];
+
     public function transaction()
     {
         return $this->hasMany(transaction_head::class);

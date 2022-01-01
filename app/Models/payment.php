@@ -9,6 +9,9 @@ class payment extends Model
 {
     use HasFactory;
 
+    protected $table = 'payments';
+    protected $guarded = ['id'];
+
     public function transaction()
     {
         return $this->HasOneOrMany(transaction_head::class);

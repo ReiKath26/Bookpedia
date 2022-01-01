@@ -9,6 +9,9 @@ class transaction_head extends Model
 {
     use HasFactory;
 
+    protected $table = 'transaction-heads';
+    protected $guarded = ['id'];
+
     public function transaction()
     {
         return $this->hasOneorMany(transaction_detail::class);

@@ -9,6 +9,9 @@ class shipping_address extends Model
 {
     use HasFactory;
 
+    protected $table = 'shipping-addresses';
+    protected $guarded = ['id'];
+
     public function transaction()
     {
         return $this->hasOneorMany(transaction_head::class);
