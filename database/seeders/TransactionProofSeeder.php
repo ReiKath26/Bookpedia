@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ShippingAddressSeeder extends Seeder
+class TransactionProofSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class ShippingAddressSeeder extends Seeder
      */
     public function run()
     {
-
+        //
     }
 }
