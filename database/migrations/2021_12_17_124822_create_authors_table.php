@@ -17,6 +17,7 @@ class CreateAuthorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('desc');
+            $table->longText('address');
             $table->string('URL')->nullable();
             $table->timestamps();
         });
