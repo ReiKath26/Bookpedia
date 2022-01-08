@@ -15,14 +15,6 @@
 
         <div class="card-body">
 
-            @if (session()->has('loginError'))
-
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
-            {{session('loginError')}}
-            </div>
-
-            @endif
-
             <form action="/login" method="POST" class="login-form">
             <img src="https://drive.google.com/uc?export=view&id=1DR4SRIkYl6IboNzavnwqC4QK0cx6jQ2A" alt="">
             <h3>Login to your account</h3>
@@ -44,6 +36,20 @@
                 <small>Don’t have account? <a href="/register">Register Now!</a> </small>
                                 
               </form>
+
+            @if (session()->has('success'))
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+            {{session('loginError')}}
+            </div>
+            @endif
+
+            @if (session()->has('loginError'))
+
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+            {{session('loginError')}}
+            </div>
+
+            @endif
               
 
         </div>

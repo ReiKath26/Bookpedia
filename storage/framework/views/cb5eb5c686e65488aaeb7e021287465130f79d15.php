@@ -15,15 +15,6 @@
 
         <div class="card-body">
 
-            <?php if(session()->has('loginError')): ?>
-
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
-            <?php echo e(session('loginError')); ?>
-
-            </div>
-
-            <?php endif; ?>
-
             <form action="/login" method="POST" class="login-form">
             <img src="https://drive.google.com/uc?export=view&id=1DR4SRIkYl6IboNzavnwqC4QK0cx6jQ2A" alt="">
             <h3>Login to your account</h3>
@@ -45,6 +36,22 @@
                 <small>Don’t have account? <a href="/register">Register Now!</a> </small>
                                 
               </form>
+
+            <?php if(session()->has('success')): ?>
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+            <?php echo e(session('loginError')); ?>
+
+            </div>
+            <?php endif; ?>
+
+            <?php if(session()->has('loginError')): ?>
+
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <?php echo e(session('loginError')); ?>
+
+            </div>
+
+            <?php endif; ?>
               
 
         </div>

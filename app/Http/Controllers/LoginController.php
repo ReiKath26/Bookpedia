@@ -21,7 +21,7 @@ class LoginController extends Controller
             Cookie::queue('myCookie', $request->email, 10080);
         }
 
-        if(Auth::attempt($credentials, true))
+        if(Auth::attempt($credentials)== true)
         {
             $request->session()->regenerate();
             return redirect()->intended('/');
