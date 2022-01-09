@@ -61,7 +61,7 @@
 
         <div>
         <div class="loyal-newsletter">"There's no friend as loyal as a good book"</div>
-        <button class="btn-newsletter mt-1" type="button">Subsribe to Our News Letter</button>
+        <button class="btn-newsletter mt-1" type="button">Subscribe to Our News Letter</button>
         </div>
 
       </div>
@@ -326,6 +326,25 @@
             height: 20%;
           }
 
+          /* NEW ARRIVALS */
+          .new-arrivals{
+            background-color: #FCCC76;
+          }
+
+          .book-of-month-picture{
+            width: 20%;
+            height: 100%;
+          }
+
+          .container-book-of-month{
+            color: #8F3F09;
+          }
+
+          .see-details-button{
+            width: 40%;
+            height: 100%;
+          }
+          
     
           /* ABOUT */
           .about-bookpedia{

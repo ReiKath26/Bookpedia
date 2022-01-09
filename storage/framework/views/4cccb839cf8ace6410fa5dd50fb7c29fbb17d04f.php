@@ -76,7 +76,7 @@
 <!-- TITLE -->
 <div class="home-title d-flex">
     <h2 class="fw-bold">Recommended This Week</h2>
-    <a href="#" class="see-all fw-bold text-decoration-none">See All</a>
+    <a href="/all-books" class="see-all fw-bold text-decoration-none">See All</a>
 </div>
 
 <!-- CARD -->
@@ -111,6 +111,47 @@
     <p>Scholar Books</p>
   </div>
 </div>
+
+<!-- NEW ARRIVALS -->
+<div class="new-arrivals">
+  <div class="home-title d-flex">
+      <h2 class="fw-bold fs-1 mt-3">NEW ARRIVALS</h2>
+      <a href="/all-books" class="see-all fw-bold text-decoration-none">See All</a>
+  </div>
+
+  <div class="d-flex">
+  <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <div class="card" style="width: 18rem;">
+    <a href="/books/<?php echo e($data['id']); ?>" class="text-decoration-none text-black">
+      <img src="<?php echo e($data['img']); ?>" class="card-img-top" alt="Picture">
+        <div class="card-body">
+          <h5 class="card-title"><?php echo e($data['title']); ?></h5>
+          <p class="card-text fs-5">Rp. <?php echo e($data['price']); ?></p>
+        </div>
+    </a>
+    </div>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </div>
+</div>
+
+<!-- BOOK OF THE MONTH -->
+<div class="container-book-of-month">
+  <div class="title text-center mt-5 mb-5">
+        <h1>BOOK OF THE MONTH</h1>
+  </div>
+
+  <div class="text-center">
+    <img src="<?php echo e($data['img']); ?>" class="book-of-month-picture" alt="Picture">
+    
+    <div class="desc-book">
+      <h3 class="book-title mt-3 mb-3 fw-bold fs-2"><?php echo e($data['title']); ?></h3>
+      <h5 class="mb-3 fw-normal"><?php echo e($data['description']); ?></h5>
+      <button type="button" class="btn btn-primary"><a class="see-details-button text-white text-decoration-none" href="/books/<?php echo e($data['id']); ?>">See Details</a></button>
+    </div>
+  </div>
+</div>
+
+
 
 <?php $__env->stopSection(); ?>
 

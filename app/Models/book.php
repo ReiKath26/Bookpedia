@@ -33,6 +33,6 @@ class book extends Model
 
     public function transaction()
     {
-        return $this->hasMany(transaction_detal::class);
+        return $this->hasMany(transaction_detail::class);
     }
 }
