@@ -327,7 +327,9 @@
           }
 
           .new-arrivals{
-            background-color: #FCCC76;
+            background-image: url(https://drive.google.com/uc?export=view&id=1r4RundG3NbDK5K40E3ItSjj-N629koDw);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
           }
 
           .book-of-month-picture{

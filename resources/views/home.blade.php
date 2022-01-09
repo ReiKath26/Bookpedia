@@ -105,14 +105,14 @@
 
   <a href="#" class="text-decoration-none">
     <div class="choose-book-type">
-      <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+      <img src="https://drive.google.com/uc?export=view&id=1FrPI7WBCn50b0qf8DlexwPcKVg8bLIsg" class="image" alt="">
       <p class="fw-bold fs-2">Imported Book</p>
     </div>
   </a>
 
   <a href="#" class="text-decoration-none">
     <div class="choose-book-type">
-      <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+      <img src="https://drive.google.com/uc?export=view&id=1LJkHRZE6U6GSo6sNxKi81t4EgX6bDnyO" class="image" alt="">
       <p class="fw-bold fs-2">Scholar Books</p>
     </div>
   </a>
