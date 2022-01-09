@@ -326,7 +326,6 @@
             height: 20%;
           }
 
-          /* NEW ARRIVALS */
           .new-arrivals{
             background-color: #FCCC76;
           }
@@ -343,6 +342,15 @@
           .see-details-button{
             width: 40%;
             height: 100%;
+          }
+
+          .book-type img{
+            width: 50%;
+            height: 75%;
+          }
+
+          .book-type p{
+            color: #8F3F09;
           }
           
     

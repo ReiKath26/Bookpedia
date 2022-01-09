@@ -83,7 +83,7 @@ class BookSeeder extends Seeder
             'publisher_id'=>1, 
             'author_id'=>3, 
             'categories_id'=>1, 
-            'title'=>'Harry Poter', 
+            'title'=>'Harry Potter', 
             'description'=>'Sebuah dunia fantasi yang penuh perjalanan misterius di dalamnya',  
             'price'=>58000, 
             'year'=>1997, 

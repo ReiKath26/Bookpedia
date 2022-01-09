@@ -95,21 +95,27 @@
 </div>
 
 <!-- BOOK TYPE -->
-<div class="d-flex">
-  <div class="choose-book-type">
-    <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
-    <p>Top Selling Books</p>
-  </div>
+<div class="book-type d-flex justify-content-center text-center mt-3 mb-3">
+  <a href="#" class="text-decoration-none">
+    <div class="choose-book-type">
+      <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+      <p class="fw-bold fs-2">Top Selling Books</p>
+    </div>  
+  </a>
 
-  <div class="choose-book-type">
-    <img src="https://drive.google.com/uc?export=view&id=1jwO62aCWg6aUkh4QOpDPxGO-8" class="image" alt="">
-    <p>Imported Book</p>
-  </div>
+  <a href="#" class="text-decoration-none">
+    <div class="choose-book-type">
+      <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+      <p class="fw-bold fs-2">Imported Book</p>
+    </div>
+  </a>
 
-  <div class="choose-book-type">
-    <img src="https://drive.google.com/uc?export=view&id=1XaEhkyY" class="image" alt="">
-    <p>Scholar Books</p>
-  </div>
+  <a href="#" class="text-decoration-none">
+    <div class="choose-book-type">
+      <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+      <p class="fw-bold fs-2">Scholar Books</p>
+    </div>
+  </a>
 </div>
 
 <!-- NEW ARRIVALS -->
@@ -136,8 +142,8 @@
 
 <!-- BOOK OF THE MONTH -->
 <div class="container-book-of-month">
-  <div class="title text-center mt-5 mb-5">
-        <h1>BOOK OF THE MONTH</h1>
+  <div class="title text-center fw-bold mt-5 mb-5">
+      <h1>BOOK OF THE MONTH</h1>
   </div>
 
   <div class="text-center">
