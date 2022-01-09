@@ -13,6 +13,12 @@ class BookController extends Controller
         return view('allBooks', ['books'=>$Books]);
     }
 
+    function bookShow()
+    {
+        $Books = book::orderBy('id', 'asc')->simplePaginate(5);
+        return view('home', ['books'=>$Books]);
+    }
+
     function detail($id)
     {
         if(book::where('id', $id)->exists())

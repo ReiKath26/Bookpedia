@@ -45,7 +45,72 @@
 
 <?php $__env->startSection('page-content'); ?>
 
-<h3>INSERT HERE</h3>
+<!-- CAROUSEL -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://drive.google.com/uc?export=view&id=1NI108Law2DA5s18IRTF12x8ofRjA3MgX" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://drive.google.com/uc?export=view&id=1cZQDA8e3OSYpsdDENPouLhsPoRtDLjye" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://drive.google.com/uc?export=view&id=1by8c779GDr3Ud0kTFIIpH1QaXACVmMP9" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- TITLE -->
+<div class="home-title d-flex">
+    <h2 class="fw-bold">Recommended This Week</h2>
+    <a href="#" class="see-all fw-bold text-decoration-none">See All</a>
+</div>
+
+<!-- CARD -->
+<div class="d-flex">
+<?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<div class="card" style="width: 18rem;">
+  <a href="/books/<?php echo e($data['id']); ?>" class="text-decoration-none text-black">
+    <img src="<?php echo e($data['img']); ?>" class="card-img-top" alt="Picture">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo e($data['title']); ?></h5>
+        <p class="card-text fs-5">Rp. <?php echo e($data['price']); ?></p>
+      </div>
+  </a>
+  </div>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+</div>
+
+<!-- BOOK TYPE -->
+<div class="d-flex">
+  <div class="choose-book-type">
+    <img src="https://drive.google.com/uc?export=view&id=1W1jR6bgXIukhma3uTKe0prm812UxT7cP" class="image" alt="">
+    <p>Top Selling Books</p>
+  </div>
+
+  <div class="choose-book-type">
+    <img src="https://drive.google.com/uc?export=view&id=1jwO62aCWg6aUkh4QOpDPxGO-8" class="image" alt="">
+    <p>Imported Book</p>
+  </div>
+
+  <div class="choose-book-type">
+    <img src="https://drive.google.com/uc?export=view&id=1XaEhkyY" class="image" alt="">
+    <p>Scholar Books</p>
+  </div>
+</div>
 
 <?php $__env->stopSection(); ?>
 

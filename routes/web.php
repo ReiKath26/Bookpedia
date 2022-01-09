@@ -22,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [BookController::class, 'bookShow']);
 
 Route::get('/login', function(){
     return view('login');

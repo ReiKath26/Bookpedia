@@ -303,15 +303,30 @@
           .home-title{
             color: #8F3F09;
             margin: 5vh;
+            margin-bottom: 0;
             justify-content: space-between;
             align-items: center;
           }
 
           .home-title a{
             color: #8F3F09;
-
           }
 
+          .card{
+            margin: 5vh;
+            display: flex;
+          }
+
+          .card-body{
+            color: #8F3F09;
+          }
+
+          .image{
+            width: 20%;
+            height: 20%;
+          }
+
+    
           /* ABOUT */
           .about-bookpedia{
             color: #9F2F00;
