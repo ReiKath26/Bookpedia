@@ -55,28 +55,21 @@
         <?php echo $__env->yieldContent('page-content'); ?>
     </div>
 
-
     <div class="space"></div>
-
-
-
       <div class="newsletter d-flex">
         <img class="newsletter-mascot" src="https://drive.google.com/uc?export=view&id=1atyTTajIi5TGFKGVNXD13WTYLFSfHmHl" alt="mascot">
 
         <div>
         <div class="loyal-newsletter">"There's no friend as loyal as a good book"</div>
-        <button class="btn-newsletter mt-1" type="button">Subsribe to Our News Letter</button>
+        <button class="btn-newsletter mt-1" type="button">Subscribe to Our News Letter</button>
         </div>
 
       </div>
 
-
-
-
       <nav class="navbar navbar-expand-lg navbar-footer">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
-            <img class="logo-footer" src="https://drive.google.com/uc?export=view&id=1LxeeQ8vWNt9cQE6oY6hez-WDR2sZG1MB" alt="Logo Bookpedia">
+            <img class="logo-footer" src="https://drive.google.com/uc?export=view&id=1iV6phfhqqKfZmskDOWDhDnPpkhOBIMjx" alt="Logo Bookpedia">
         </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,7 +104,7 @@
 
         .space
         {
-            height: 30vh;
+            height: 10vh;
         }
 
           .loyal-newsletter
@@ -119,7 +112,8 @@
             margin-top: 15%;
             font-weight: bold;
             color: #8F3F09;
-            font-size: 100px;
+            font-size: 7vh;
+            margin-right: 7vh;
             text-align: center;
           }
 
@@ -129,7 +123,6 @@
             margin-left: 7%;
             color: white;
             width: 85%;
-            height: 7%;
             font-size: 35px;
             font-weight: bold;
             text-align: center;
@@ -305,6 +298,74 @@
             width: 6vw;
             height: 17vh;
           }
+
+          /* HOMEPAGE */
+          .home-title{
+            color: #8F3F09;
+            margin: 5vh;
+            margin-bottom: 0;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .home-title a{
+            color: #8F3F09;
+          }
+
+          .card{
+            margin: 5vh;
+            display: flex;
+          }
+
+          .card-body{
+            color: #8F3F09;
+          }
+
+          .image{
+            width: 20%;
+            height: 20%;
+          }
+
+          .new-arrivals{
+            background-image: url(https://drive.google.com/uc?export=view&id=1r4RundG3NbDK5K40E3ItSjj-N629koDw);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+          }
+
+          .book-of-month-picture{
+            width: 20%;
+            height: 100%;
+          }
+
+          .container-book-of-month{
+            color: #8F3F09;
+          }
+
+          .see-details-button{
+            width: 40%;
+            height: 100%;
+          }
+
+          .book-type img{
+            width: 50%;
+            height: 75%;
+          }
+
+          .book-type p{
+            color: #8F3F09;
+          }
+          
+    
+          /* ABOUT */
+          .about-bookpedia{
+            color: #9F2F00;
+          }
+
+          .social-media img{
+            width: 3%;
+            height: 3%;           
+          }
+
       </style>
 
 

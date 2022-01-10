@@ -26,7 +26,7 @@ Route::get('/', [BookController::class, 'bookShow']);
 
 Route::get('/login', function(){
     return view('login');
-});
+})->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/about-us', function(){
@@ -38,6 +38,10 @@ Route::get('/books/{id}', [BookController::class, 'detail']);
 
 Route::get('/contact-us', function(){
     return view('conttact');
+});
+
+Route::get('/profile', function(){
+    return view('profile');
 });
 
 
