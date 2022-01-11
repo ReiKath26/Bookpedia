@@ -366,6 +366,11 @@
             height: 3%;           
           }
 
+          /* CONTACT */
+          .contact-us{
+            color: #9F2F00;
+          }
+
       </style>
 
 
