@@ -44,6 +44,9 @@ Route::get('/profile', function(){
     return view('profile');
 });
 
+Route::get('/success', function(){
+    return view('successOrder');
+});
 
 Route::group(['middleware'=>'auth'], function(){
     Route::resource('cart', CartController::class);

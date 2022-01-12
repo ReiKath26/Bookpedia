@@ -43,7 +43,7 @@
             </form>
 
             <div class="navbar-menu d-flex">
-                @yield('navbar-menu')
+                <?php echo $__env->yieldContent('navbar-menu'); ?>
             </div>
 
         </ul>
@@ -52,7 +52,7 @@
       </nav>
 
       <div class="page-content">
-        @yield('page-content')
+        <?php echo $__env->yieldContent('page-content'); ?>
     </div>
 
     <div class="space"></div>
@@ -385,3 +385,4 @@
 
   </body>
 </html>
+<?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bookpediaa\resources\views/master.blade.php ENDPATH**/ ?>

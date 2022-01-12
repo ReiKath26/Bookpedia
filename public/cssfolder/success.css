@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*{
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+}
+
+.image{
+    margin-top: 5vh;
+    width: 25%;
+    height: 25%;
+}
+
+.history-button{
+    width: 20%;
+    background-color: #8F3F09;;
+}
