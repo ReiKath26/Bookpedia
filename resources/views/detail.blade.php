@@ -44,6 +44,7 @@
 @endsection
 
 @section('page-content')
+
 <div class="container">
   <div class="row">
     <div class="col-4" id="book-detail-image">
@@ -57,8 +58,8 @@
           <h1>{{$bookdata['title']}}</h1>
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#book-format" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Book Format</button>
-              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#book-description" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Description</button>
+              <button class="nav-link active" id="tab-detail-choose" data-bs-toggle="tab" data-bs-target="#book-format" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Book Format</button>
+              <button class="nav-link" id="tab-detail-choose" data-bs-toggle="tab" data-bs-target="#book-description" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Description</button>
             </div>
           </nav>
         </div>
@@ -212,16 +213,30 @@
   }
 
   #add-quantity-card{
+    
     padding-left: 5vh;
     padding-right: 5vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    border-radius: 30px;
+    border-color: #8F3F09;
+    font-style: bold;
   }
   #nav-tab{
     color: #8F3F09;
+    justify-content: space-evenly;
   }
   .nav-link{
     color: #8F3F09;
+  }
+  #tab-detail-choose{
+    font-size: 20px;
+    font-weight: bold;
+    width:50%;
+  }
+  #tab-detail-choose:hover{
+    color: white;
+    background-color: #C9C9C9;
   }
   #nav-tabContent{
     margin-top: 5vh;
@@ -236,4 +251,3 @@
 </style>
 
 @endsection
-
