@@ -29,4 +29,18 @@ class BookController extends Controller
             return view('detail', ['book'=>$book]);
         }
     }
+    
+    //Return book detail and recomendation -> For Detail Page
+    function detailAndRecomend($id)
+    {
+        $Books = book::orderBy('id', 'asc')->simplePaginate(5);
+
+        if(book::where('id', $id)->exists())
+        {
+            $detailbook = book::select('books.*')
+            ->join('publishers', 'publishers.id', '=', 'books.publisher_id')
+            ->join('authors', 'authors.id', '=', 'books.author_id')->where('books.id', $id)->first();
+        }
+        return view('detail', ['bookdata'=>$detailbook, 'bookRec'=>$Books]);
+    }
 }
