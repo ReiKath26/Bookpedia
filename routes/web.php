@@ -34,7 +34,7 @@ Route::get('/about-us', function(){
 });
 
 Route::get('/all-books', [BookController::class, 'show']);
-Route::get('/books/{id}', [BookController::class, 'detail']);
+Route::get('/books/{id}', [BookController::class, 'detailAndRecomend']);
 
 Route::get('/contact-us', function(){
     return view('conttact');
