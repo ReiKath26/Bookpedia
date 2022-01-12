@@ -105,15 +105,15 @@
     <div class="col-8" id="all-books-data">
       <div class="row no-gutters">
         @foreach($books as $data)
-        <div class="col">
-          <a href="/books/{{$data['id']}}" class="card m-3" id="cat-card" style="width: 12vw; height: 45vh">
-            <div class="card-body" id="card-display-books">
-              <img class = image-cat src={{$data['img']}}>
-              <h5 class="category-text ">{{$data['title']}}</h5>
-              <h6 class="category-subtext">Rp. {{$data['price']}}</h6>
-            </div>
+        <div class="col-5" style="width: 18rem;">
+          <a href="/books/{{$data['id']}}" class="text-decoration-none text-black">
+            <img src="{{$data['img']}}" class="card-img-top" alt="Picture">
+              <div class="card-body">
+                <h5 class="card-title">{{$data['title']}}</h5>
+                <p class="card-text fs-5">Rp. {{$data['price']}}</p>
+              </div>
           </a>
-        </div>  
+        </div>
         @endforeach
       </div>
     </div>

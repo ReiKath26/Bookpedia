@@ -105,15 +105,15 @@
     <div class="col-8" id="all-books-data">
       <div class="row no-gutters">
         <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <div class="col">
-          <a href="/books/<?php echo e($data['id']); ?>" class="card m-3" id="cat-card" style="width: 12vw; height: 45vh">
-            <div class="card-body" id="card-display-books">
-              <img class = image-cat src=<?php echo e($data['img']); ?>>
-              <h5 class="category-text "><?php echo e($data['title']); ?></h5>
-              <h6 class="category-subtext">Rp. <?php echo e($data['price']); ?></h6>
-            </div>
+        <div class="col-5" style="width: 18rem;">
+          <a href="/books/<?php echo e($data['id']); ?>" class="text-decoration-none text-black">
+            <img src="<?php echo e($data['img']); ?>" class="card-img-top" alt="Picture">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo e($data['title']); ?></h5>
+                <p class="card-text fs-5">Rp. <?php echo e($data['price']); ?></p>
+              </div>
           </a>
-        </div>  
+        </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
     </div>
