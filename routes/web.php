@@ -35,6 +35,11 @@ Route::get('/about-us', function(){
 });
 
 Route::get('/all-books', [BookController::class, 'show']);
+Route::get('/all-books/categories-{name}', [BookController::class, 'showBookByCategory']);
+Route::get('/all-books/stock-avaible-only', [BookController::class, 'showBookAvaible']);
+Route::get('/all-books/ordered-by-newest', [BookController::class, 'showBookNewest']);
+Route::get('/all-books/ordered-by-lowest-price', [BookController::class, 'showBookLowestPrice']);
+Route::get('/all-books/ordered-by-top-selling', [BookController::class, 'showBookTopSelling']);
 Route::get('/books/{id}', [BookController::class, 'detailAndRecomend']);
 
 Route::get('/contact-us', function(){
