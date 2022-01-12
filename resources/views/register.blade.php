@@ -35,11 +35,11 @@
                 <input type="text" class="edit-input" id="address-check" name="address" required> <br>
 
                 <label class="lbl" for="address">Phone Number:</label><br>
-                <input type="number" class="edit-input" id="number-check" name="phoneNumber" required> <br>
+                <input type="text" class="edit-input" id="number-check" name="phoneNumber" required> <br>
 
                 <div class="container">
                   <div class="center">
-                  <button class="btn btn-primary" type="submit"><a href="/" class="register-button">Register</a>
+                  <button class="btn btn-primary" type="submit" class="register-button">Register</button>
                   </div>
                 </div>
 

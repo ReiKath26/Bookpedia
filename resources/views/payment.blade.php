@@ -1,4 +1,4 @@
-@extends('master')
+@extends('transact')
 
 @section('page-content')
 
