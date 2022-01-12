@@ -1,25 +1,25 @@
-@extends('transact')
 
-@section('page-content')
+
+<?php $__env->startSection('page-content'); ?>
 
 <div class="container">
     <div class="row">
       <div class="col col-8">
-        @if(count($errors) > 0)
-        @foreach($errors->all() as $error)
-            <div class="alert alert-warning">{{ $error }}</div>
-        @endforeach
-        @endif
-        @if ($message = Session::get('error'))
+        <?php if(count($errors) > 0): ?>
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="alert alert-warning"><?php echo e($error); ?></div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endif; ?>
+        <?php if($message = Session::get('error')): ?>
             <div class="alert alert-warning">
-                <p>{{ $message }}</p>
+                <p><?php echo e($message); ?></p>
             </div>
-        @endif
-        @if ($message = Session::get('success'))
+        <?php endif; ?>
+        <?php if($message = Session::get('success')): ?>
             <div class="alert alert-success">
-                <p>{{ $message }}</p>
+                <p><?php echo e($message); ?></p>
             </div>
-        @endif
+        <?php endif; ?>
 
         <div class="col col-12">
             <div class="card">
@@ -36,31 +36,34 @@
                       </tr>
                     </thead>
                     <tbody>
-                    @if($thisShippingAddress)
+                    <?php if($thisShippingAddress): ?>
                       <tr>
                         <td>
-                          {{ $thisShippingAddress->receiver_name }}
+                          <?php echo e($thisShippingAddress->receiver_name); ?>
+
                         </td>
                         <td>
-                          {{ $thisShippingAddress->address }}<br />
-                          {{ $thisShippingAddress->city}}, {{ $thisShippingAddress->province}} - {{ $thisShippingAddress -> province}}
+                          <?php echo e($thisShippingAddress->address); ?><br />
+                          <?php echo e($thisShippingAddress->city); ?>, <?php echo e($thisShippingAddress->province); ?> - <?php echo e($thisShippingAddress -> province); ?>
+
                         </td>
                         <td>
-                          {{ $thisShippingAddress->phone }}
+                          <?php echo e($thisShippingAddress->phone); ?>
+
                         </td>
                         <td>
-                          <a href="{{ route('shippingaddress.index') }}" class="btn btn-secondary btn-sm">
+                          <a href="<?php echo e(route('shippingaddress.index')); ?>" class="btn btn-secondary btn-sm">
                             Change address
                           </a>
                         </td>
                       </tr>
-                    @endif
+                    <?php endif; ?>
                     </tbody>
                   </table>
                 </div>
               </div>
               <div class="card-footer">
-                <a href="{{ route('shippingaddress.index') }}" class="btn btn-sm btn-secondary">
+                <a href="<?php echo e(route('shippingaddress.index')); ?>" class="btn btn-sm btn-secondary">
                   Add new address
                 </a>
               </div>
@@ -76,21 +79,21 @@
                   Your Order
                 </div>
                 <div class="card-body">
-                    @foreach($thisCart->details as $detail)
+                    <?php $__currentLoopData = $thisCart->details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                     <div class="d-flex">
 
-                        <img class="cart-image m-3" src={{$detail->product->img}}>
+                        <img class="cart-image m-3" src=<?php echo e($detail->product->img); ?>>
 
                         <div class="data-cart d-inline">
-                        <div class="title-cart ml-2 mt-2">{{$detail->product->title}}</div>
-                        <div class="title-author">{{$detail->product->author->name}}</div>
-                        <div class="title-sub">{{$detail->subtotal}}</div>
+                        <div class="title-cart ml-2 mt-2"><?php echo e($detail->product->title); ?></div>
+                        <div class="title-author"><?php echo e($detail->product->author->name); ?></div>
+                        <div class="title-sub"><?php echo e($detail->subtotal); ?></div>
 
                         </div>
                     </div>
 
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
               </div>
             </div>
@@ -112,38 +115,41 @@
                   </tr>
                 </thead>
                 <tbody>
-                @if($thisShipping)
+                <?php if($thisShipping): ?>
                   <tr>
                     <td>
-                      {{ $thisShipping->shipment_company }}
+                      <?php echo e($thisShipping->shipment_company); ?>
+
                     </td>
                     <td>
-                      {{ $thisShipping->shipment_type }}
+                      <?php echo e($thisShipping->shipment_type); ?>
+
                     </td>
                     <td>
-                      {{ $thisShipping->shipment_price }}
+                      <?php echo e($thisShipping->shipment_price); ?>
+
                     </td>
                     <td>
-                        {{$thisShipping->min_shipment_duration}} - {{$thisShipping->max_shipment_duration}} days
+                        <?php echo e($thisShipping->min_shipment_duration); ?> - <?php echo e($thisShipping->max_shipment_duration); ?> days
                     </td>
                     <td>
-                      <a href="{{ route('shipping.index') }}" class="btn btn-secondary btn-sm">
+                      <a href="<?php echo e(route('shipping.index')); ?>" class="btn btn-secondary btn-sm">
                         Change Method
                       </a>
                     </td>
                   </tr>
 
-                  @else
+                  <?php else: ?>
                   <td>None selected</td>
                   <td></td>
                   <td></td>
                   <td></td>
                   <td>
-                    <a href="{{ route('shipping.index') }}" class="btn btn-secondary btn-sm">
+                    <a href="<?php echo e(route('shipping.index')); ?>" class="btn btn-secondary btn-sm">
                       Pick Method
                     </a>
                   </td>
-                @endif
+                <?php endif; ?>
                 </tbody>
               </table>
             </div>
@@ -164,27 +170,28 @@
                   </tr>
                 </thead>
                 <tbody>
-                @if($thisPayment)
+                <?php if($thisPayment): ?>
                   <tr>
                     <td>
-                      {{ $thisPayment->payment_method}}
+                      <?php echo e($thisPayment->payment_method); ?>
+
                     </td>
                     <td>
-                      <a href="{{ route('payment.index') }}" class="btn btn-secondary btn-sm">
+                      <a href="<?php echo e(route('payment.index')); ?>" class="btn btn-secondary btn-sm">
                         Change Payment
                       </a>
                     </td>
                   </tr>
 
-                  @else
+                  <?php else: ?>
                 <td>None selected</td>
 
                 <td>
-                    <a href="{{ route('payment.index') }}" class="btn btn-secondary btn-sm">
+                    <a href="<?php echo e(route('payment.index')); ?>" class="btn btn-secondary btn-sm">
                       Pick Payment Method
                     </a>
                   </td>
-                @endif
+                <?php endif; ?>
                 </tbody>
               </table>
             </div>
@@ -203,41 +210,44 @@
               <tr>
                 <td>Subtotal</td>
                 <td class="text-right">
-                 Rp.  {{$thisCart->total}}
+                 Rp.  <?php echo e($thisCart->total); ?>
+
                 </td>
               </tr>
-              @if($thisShipping)
+              <?php if($thisShipping): ?>
               <tr>
                 <td>Shipping fee</td>
                 <td class="text-right">
-                    Rp. {{$thisShipping->shipment_price}}
+                    Rp. <?php echo e($thisShipping->shipment_price); ?>
+
                 </td>
               </tr>
-              @endif
-              @if($thisPayment)
+              <?php endif; ?>
+              <?php if($thisPayment): ?>
               <tr>
                 <td>Admin fee</td>
                 <td class="text-right">
-                    Rp. {{$thisPayment->admin_fee}}
+                    Rp. <?php echo e($thisPayment->admin_fee); ?>
+
                 </td>
               </tr>
-              @endif
+              <?php endif; ?>
               <tr>
                 <td>Total</td>
 
-                @if($thisShipping && $thisPayment)
+                <?php if($thisShipping && $thisPayment): ?>
                 <td class="text-right">
                    Rp.  <?php $thisCart->total + $thisShipping->shipment_price + $thisPayment->admin_fee?>
                 </td>
-                @else
+                <?php else: ?>
                 <td>Calculating...</td>
-                @endif
+                <?php endif; ?>
               </tr>
             </table>
           </div>
           <div class="card-footer">
             <form action="/order/billing" method="post">
-              @csrf()
+              <?php echo csrf_field(); ?>
               <button type="submit" class="btn btn-secondary btn-block">Order</button>
             </form>
           </div>
@@ -258,4 +268,6 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('transact', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bokpedia_book\resources\views/checkout.blade.php ENDPATH**/ ?>

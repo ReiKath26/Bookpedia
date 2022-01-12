@@ -25,7 +25,7 @@
       </nav>
 
       <div class="page-content">
-        @yield('page-content')
+        <?php echo $__env->yieldContent('page-content'); ?>
     </div>
 
 
@@ -281,3 +281,4 @@
 
   </body>
 </html>
+<?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bokpedia_book\resources\views/transact.blade.php ENDPATH**/ ?>

@@ -1,8 +1,8 @@
-@extends('master')
 
-@section('navbar-menu')
 
-@auth
+<?php $__env->startSection('navbar-menu'); ?>
+
+<?php if(auth()->guard()->check()): ?>
 
 <li class="nav-item">
     <a class="nav-link" href="/profile">
@@ -14,7 +14,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href={{route('cart.index')}}>
+    <a class="nav-link" href=<?php echo e(route('cart.index')); ?>>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8F3F09" class="bi bi-cart-fill" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>
@@ -22,7 +22,7 @@
   </li>
 
 
-@else
+<?php else: ?>
 <li class="nav-item">
     <a class="nav-link" href="/login">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8F3F09" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -40,10 +40,10 @@
     </a>
   </li>
 
-@endif
-@endsection
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
 
-@section('page-content')
+<?php $__env->startSection('page-content'); ?>
 
 <!-- CAROUSEL -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -81,17 +81,17 @@
 
 <!-- CARD -->
 <div class="d-flex">
-@foreach($books as $data)
+<?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 <div class="card" style="width: 18rem;">
-  <a href="/books/{{$data['id']}}" class="text-decoration-none text-black">
-    <img src="{{$data['img']}}" class="card-img-top" alt="Picture">
+  <a href="/books/<?php echo e($data['id']); ?>" class="text-decoration-none text-black">
+    <img src="<?php echo e($data['img']); ?>" class="card-img-top" alt="Picture">
       <div class="card-body">
-        <h5 class="card-title">{{$data['title']}}</h5>
-        <p class="card-text fs-5">Rp. {{$data['price']}}</p>
+        <h5 class="card-title"><?php echo e($data['title']); ?></h5>
+        <p class="card-text fs-5">Rp. <?php echo e($data['price']); ?></p>
       </div>
   </a>
   </div>
-@endforeach
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 
 <!-- BOOK TYPE -->
@@ -126,17 +126,17 @@
   </div>
 
   <div class="d-flex">
-  @foreach($books as $data)
+  <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <div class="card" style="width: 18rem;">
-    <a href="/books/{{$data['id']}}" class="text-decoration-none text-black">
-      <img src="{{$data['img']}}" class="card-img-top" alt="Picture">
+    <a href="/books/<?php echo e($data['id']); ?>" class="text-decoration-none text-black">
+      <img src="<?php echo e($data['img']); ?>" class="card-img-top" alt="Picture">
         <div class="card-body">
-          <h5 class="card-title">{{$data['title']}}</h5>
-          <p class="card-text fs-5">Rp. {{$data['price']}}</p>
+          <h5 class="card-title"><?php echo e($data['title']); ?></h5>
+          <p class="card-text fs-5">Rp. <?php echo e($data['price']); ?></p>
         </div>
     </a>
     </div>
-  @endforeach
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </div>
 </div>
 
@@ -147,16 +147,18 @@
   </div>
 
   <div class="text-center">
-    <img src="{{$data['img']}}" class="book-of-month-picture" alt="Picture">
+    <img src="<?php echo e($data['img']); ?>" class="book-of-month-picture" alt="Picture">
     
     <div class="desc-book">
-      <h3 class="book-title mt-3 mb-3 fw-bold fs-2">{{$data['title']}}</h3>
-      <h5 class="mb-3 fw-normal">{{$data['description']}}</h5>
-      <button type="button" class="btn btn-secondary"><a class="see-details-button text-white text-decoration-none" href="/books/{{$data['id']}}">See Details</a></button>
+      <h3 class="book-title mt-3 mb-3 fw-bold fs-2"><?php echo e($data['title']); ?></h3>
+      <h5 class="mb-3 fw-normal"><?php echo e($data['description']); ?></h5>
+      <button type="button" class="btn btn-secondary"><a class="see-details-button text-white text-decoration-none" href="/books/<?php echo e($data['id']); ?>">See Details</a></button>
     </div>
   </div>
 </div>
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bokpedia_book\resources\views/home.blade.php ENDPATH**/ ?>

@@ -22,18 +22,51 @@
                   </svg>
             </span>
           </button>
+          <div class="navbar-center" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+            <form class="d-flex">
+              <span class="input-group-text" id="basic-addon1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFFFFF" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+              </span>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+
+            <div class="navbar-menu d-flex">
+                <?php echo $__env->yieldContent('navbar-menu'); ?>
+            </div>
+
+        </ul>
+          </div>
+        </div>
       </nav>
 
       <div class="page-content">
-        @yield('page-content')
+        <?php echo $__env->yieldContent('page-content'); ?>
     </div>
 
-
     <div class="space"></div>
+      <div class="newsletter d-flex">
+        <img class="newsletter-mascot" src="https://drive.google.com/uc?export=view&id=1atyTTajIi5TGFKGVNXD13WTYLFSfHmHl" alt="mascot">
 
+        <div>
+        <div class="loyal-newsletter">"There's no friend as loyal as a good book"</div>
+        <button class="btn-newsletter mt-1" type="button">Subscribe to Our News Letter</button>
+        </div>
 
+      </div>
 
-    <nav class="navbar navbar-expand-lg navbar-footer">
+      <nav class="navbar navbar-expand-lg navbar-footer">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img class="logo-footer" src="https://drive.google.com/uc?export=view&id=1iV6phfhqqKfZmskDOWDhDnPpkhOBIMjx" alt="Logo Bookpedia">
@@ -68,13 +101,10 @@
       </nav>
 
       <style>
-        *{
-          top: 5vh;
-        }
 
         .space
         {
-            height: 30vh;
+            height: 10vh;
         }
 
           .loyal-newsletter
@@ -82,7 +112,8 @@
             margin-top: 15%;
             font-weight: bold;
             color: #8F3F09;
-            font-size: 100px;
+            font-size: 7vh;
+            margin-right: 7vh;
             text-align: center;
           }
 
@@ -92,7 +123,6 @@
             margin-left: 7%;
             color: white;
             width: 85%;
-            height: 7%;
             font-size: 35px;
             font-weight: bold;
             text-align: center;
@@ -269,8 +299,85 @@
             height: 17vh;
           }
 
-          .container{
+          /* HOMEPAGE */
+          .home-title{
+            color: #8F3F09;
+            margin: 5vh;
+            margin-bottom: 0;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .home-title a{
+            color: #8F3F09;
+          }
+
+          .card{
+            margin: 5vh;
+            display: flex;
+          }
+
+          .card-body{
+            color: #8F3F09;
+          }
+
+          .image{
+            width: 20%;
+            height: 20%;
+          }
+
+          .new-arrivals{
+            background-image: url(https://drive.google.com/uc?export=view&id=1r4RundG3NbDK5K40E3ItSjj-N629koDw);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+          }
+
+          .book-of-month-picture{
+            width: 20%;
+            height: 100%;
+          }
+
+          .container-book-of-month{
+            color: #8F3F09;
+          }
+
+          .see-details-button{
+            width: 40%;
+            height: 100%;
+          }
+
+          .book-type img{
+            width: 50%;
+            height: 75%;
+          }
+
+          .book-type p{
+            color: #8F3F09;
+          }
+          
+    
+          /* ABOUT */
+          .about-bookpedia{
             color: #9F2F00;
+          }
+
+          .social-media img{
+            width: 3%;
+            height: 3%;           
+          }
+
+          /* CONTACT */
+          .contact-us{
+            color: #9F2F00;
+          }
+
+          /* PROFILE */
+          .profile{
+            color: #9F2F00;
+          }
+
+          .color-brown{
+          color: #9F2F00;
           }
       </style>
 
@@ -281,3 +388,4 @@
 
   </body>
 </html>
+<?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bokpedia_book\resources\views/master.blade.php ENDPATH**/ ?>

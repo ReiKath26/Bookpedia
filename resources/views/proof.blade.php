@@ -3,7 +3,7 @@
 @section('page-content')
 
 
-<div class="row">
+<div class="row text-center">
     <div class="container">
         <h2 class="text-center my-5">Please upload your transaction proof here</h2>
 
@@ -20,12 +20,13 @@
             <form action="/success" method="GET" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="form-group">
-                    <b>File Gambar</b><br/>
+                <div class="form-group mb-5">
+                    <b class="fs-4">Picture File</b><br/>
+                    <br>
                     <input type="file" name="file">
                 </div>
 
-                <input type="submit" value="Upload" class="btn btn-primary">
+                <input type="submit" value="Upload" class="btn btn-secondary">
             </form>
         </div>
     </div>
