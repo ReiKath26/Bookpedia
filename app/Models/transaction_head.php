@@ -22,4 +22,16 @@ class transaction_head extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function shipping()
+    {
+        return $this->belongsTo(shipping::class);
+    }
+    public function payment()
+    {
+        return $this->belongsTo(payment::class);
+    }
+    public function address()
+    {
+        return $this->belongsTo(shipping_address::class, 'shipping_address');
+    }
 }

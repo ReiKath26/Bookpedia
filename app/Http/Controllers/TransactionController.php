@@ -6,8 +6,10 @@ use App\Models\cart;
 use App\Models\payment;
 use App\Models\shipping;
 use App\Models\shipping_address;
+use App\Models\transaction_detail;
 use App\Models\transaction_head;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -64,5 +66,19 @@ class TransactionController extends Controller
         {
             return abort('404');
         }
+    }
+
+    public function history()
+    {
+        $histories = transaction_head::where('user_id', Auth::user()->id)->get();
+        return view('history', ['histories' => $histories]);
+    }
+
+    public function historyDetail($id)
+    {
+        $head = transaction_head::find($id);
+        $details = transaction_detail::where('transaction_id', $id)->get();
+
+        return view('historyDetail', ['head' => $head, 'details' => $details]);
     }
 }

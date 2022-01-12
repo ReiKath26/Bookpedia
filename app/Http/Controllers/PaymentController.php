@@ -19,6 +19,6 @@ class PaymentController extends Controller
         $newpayment = payment::findOrFail($id);
         $newpayment->update(['status'=>'selected']);
         payment::where('id', '!=', $newpayment->id)->update(['status'=>'no']);
-        return view('checkout');
+        return redirect('/checkout');
     }
 }

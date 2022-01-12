@@ -59,4 +59,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/checkout', [CartController::class, 'checkout']);
     Route::get('/payment-proof', [UploadController::class, 'upload']);
     Route::post('/upload/process', [UploadController::class. 'process']);
+
+    Route::get('/history', [TransactionController::class, 'history']);
+    Route::get('/history/{id}', [TransactionController::class, 'historyDetail']);
 });
