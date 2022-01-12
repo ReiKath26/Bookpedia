@@ -10,7 +10,7 @@ body{
 }
 .card-body{
     width: 749px;
-    height: 599px;
+    height: 610px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -25,11 +25,23 @@ body{
 }
 form *{
     font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+    color: #9F2F00;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
+
+form .login-button{
+    color: #ffffff;
+}
+
+.alert{
+    margin-top: 2vh;
+    background-color: #e0000060;
+    color: #ffffff;
+    padding: 2vh;
+}
+
 form h3{
     font-family: Roboto;
     font-style: normal;
@@ -61,11 +73,11 @@ label{
 }
 input{
     width: 650px;
-height: 50px;
-background: rgba(0, 0, 0, 0.35);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-font-size: 22px;
-padding-left: 10px;
+    height: 50px;
+    background: rgba(216, 216, 216, 0.35);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 22px;
+    padding-left: 10px;
 }
 
 .container {
@@ -83,7 +95,6 @@ padding-left: 10px;
   transform: translate(-50%, -50%);
 }
 button{
-    
     width: 200px;
     height: 50px;
     left: 558px;
@@ -99,8 +110,10 @@ button{
 small{
     position: absolute;
     left: 35%;
-    color: #AA4526;
+    color: #555555;
 }
 small a{
-    color: blue;
+    color: #AA4526;
+    text-decoration: none;
+    font-weight: bold;
 }

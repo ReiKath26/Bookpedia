@@ -17,22 +17,24 @@
             <form action="/login" method="POST" class="login-form">
             <img src="https://drive.google.com/uc?export=view&id=1DR4SRIkYl6IboNzavnwqC4QK0cx6jQ2A" alt="">
             <h3>Login to your account</h3>
-                @csrf
-                @if (session()->has('success'))
+                <?php echo csrf_field(); ?>
+                <?php if(session()->has('success')): ?>
                   <div class="alert alert-success d-flex align-items-center" role="alert">
-                  {{session('loginError')}}
-                  </div>
-                  @endif
+                  <?php echo e(session('loginError')); ?>
 
-                  @if (session()->has('loginError'))
+                  </div>
+                  <?php endif; ?>
+
+                  <?php if(session()->has('loginError')): ?>
 
                   <div class="alert alert-danger d-flex align-items-center" role="alert">
-                  {{session('loginError')}}
+                  <?php echo e(session('loginError')); ?>
+
                  </div>
 
-                 @endif
+                 <?php endif; ?>
                 <label class="lbl" for="email">Email:</label><br>
-                <input type="email" class="edit-input" id="email-check" name="email" required autofocus value={{Cookie::get('myCookie') !== null ? Cookie::get('myCookie') : ""}}><br>
+                <input type="email" class="edit-input" id="email-check" name="email" required autofocus value=<?php echo e(Cookie::get('myCookie') !== null ? Cookie::get('myCookie') : ""); ?>><br>
 
                 <label class="lbl" for="password">Password:</label><br>
                 <input type="password" class="edit-input" id="password-check" name="password" required><br>
@@ -58,3 +60,4 @@
 
 </body>
 </html>
+<?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bokpedia_book\resources\views/login.blade.php ENDPATH**/ ?>

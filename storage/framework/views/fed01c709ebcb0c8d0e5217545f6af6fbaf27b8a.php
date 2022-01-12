@@ -65,8 +65,9 @@
 <div>
 
 <div class="title-page">My Cart</div>
-<div class="box"></div>
+<div class="box">
 
+</div>
 <?php if($thisCart): ?>
 
 
@@ -143,6 +144,7 @@
 
 
 <?php endif; ?>
+
 
 
 <?php $__env->stopSection(); ?>

@@ -85,7 +85,17 @@
                   <input name="qty" type="number" placeholder="Enter quantity"><br>
                 </div>
                 
+                <?php if(Auth::check()): ?>
                 <button class="button btn-primary" type="submit">Add to My Cart</button>
+
+                <?php else: ?>
+                <button class="btn btn-primary" type="submit">
+                  
+                  <a class="not-logged-in" href="/login">
+                  Login to Make Transaction</a>
+                
+
+                <?php endif; ?>
             
               </form>
             
@@ -98,7 +108,7 @@
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="book-format" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="row">
-              <h4>Avaible Format</h4>
+              <h4>Available Format</h4>
               <div class="col">
                 <div class="card" id="book-format-choice">
                   <h5>Hard Cover</h5>
@@ -107,7 +117,7 @@
 
             <div class="col">
               <div class="card" id="book-format-choice">
-                <h5>E-book</h5>
+                <h5>E-book (Coming soon)</h5>
               </div>
             </div>
             </div>
@@ -197,6 +207,16 @@
 </div>
 
 <style>
+
+  .not-logged-in:hover
+  {
+    color: #C9C9C9;
+  }
+
+  .not-logged-in::selection
+  {
+    color: #C9C9C9;
+  }
   .container{
     margin-top: 5vh;
     color: #8F3F09;

@@ -13,8 +13,8 @@ class registerController extends Controller
         $request->validate([
             'fullname' => 'required|min:5',
             'email' => 'required|unique:users',
-            'password'=>'required|min:8',
-            'address'=>'required|min:10',
+            'password'=>'required|min:5',
+            'address'=>'required|min:5',
             'phoneNumber'=>'required|min:10',
         ]);
 

@@ -52,9 +52,9 @@
     Newest
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Newest</a>
-    <a class="dropdown-item" href="#">Name</a>
-    <a class="dropdown-item" href="#">Top Selling</a>
+    <a class="dropdown-item" href="/all-books/ordered-by-newest">Newest</a>
+    <a class="dropdown-item" href="/all-books/ordered-by-lowest-price">Name</a>
+    <a class="dropdown-item" href="/all-books/ordered-by-top-selling">Top Selling</a>
   </div>
 </div>
 
@@ -79,13 +79,16 @@
       
       <div class="row">
         <h4>Price</h4>
-        <form>
+        <form action="/all-books/price-search" method="GET">
           <div class="form-group row" id="form-set-price">
             <label for="inputMinimalNumber">Min</label>
-            <input type="number" class="form-control" id="minAmount" placeholder="Enter min. amount">
+            <input type="number" class="form-control" name="inputMinimalNumber" required id="minAmount" placeholder="Enter min. amount">
             <label for="inputMaxNumber">Max</label>
-            <input type="number" class="form-control" id="maxAmount" placeholder="Enter max. amount">
+            <input type="number" class="form-control" name="inputMaxNumber" required id="maxAmount" placeholder="Enter max. amount">
           </div>
+
+          <button class="btn btn-primary" type="submit">Search
+          </button>
         </form>
         
       </div>
@@ -97,7 +100,7 @@
         </button>
         <div class="collapse" id="avaibilityMenu">
           <a class="dropdown-item" href="/all-books">All</a>
-          <a class="dropdown-item" href="/all-books/stock-avaible-only">Avaible Only</a>
+          <a class="dropdown-item" href="/all-books/stock-avaible-only">Available Only</a>
         </div>
       </div>
     </div>

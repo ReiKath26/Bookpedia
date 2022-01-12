@@ -19,33 +19,33 @@
             <h3>Register Account</h3>
                 @csrf
                 @if ($errors->any())
-                    {!! implode('', $errors->all('<div class="container bg-danger"><b>:message</b></div>')) !!}
+                    {!! implode('', $errors->all('<div class="error-message"><b>:message</b></div>')) !!}
                 @endif
                 
                 <label class="lbl" for="fullname">Full Name:</label><br>
-                <input type="text" class="edit-input" id="fullname-check" name="fullname" required> <br>
+                <input type="text" class="edit-input" id="fullname-check" name="fullname" required placeholder="Input your full name"> <br>
 
                 <label class="lbl" for="email">Email Address:</label><br>
-                <input type="email" class="edit-input" id="email-check" name="email" required><br>
+                <input type="email" class="edit-input" id="email-check" name="email" required placeholder="Input your valid email"><br>
 
                 <label class="lbl" for="password">Password:</label><br>
-                <input type="password" class="edit-input" id="password-check" name="password" required><br>
+                <input type="password" class="edit-input" id="password-check" name="password" required placeholder="Password at least 5 characters"><br>
 
                 <label class="lbl" for="address">Address:</label><br>
-                <input type="text" class="edit-input" id="address-check" name="address" required> <br>
+                <input type="text" class="edit-input" id="address-check" name="address" required placeholder="Input your valid address"> <br>
 
                 <label class="lbl" for="address">Phone Number:</label><br>
-                <input type="text" class="edit-input" id="number-check" name="phoneNumber" required> <br>
+                <input type="text" class="edit-input" id="number-check" name="phoneNumber" required placeholder="Phone Number at least 10 numbers"> <br>
+                                
+              </form>
 
-                <div class="container">
+              <div class="container">
                   <div class="center">
-                  <button class="btn btn-primary" type="submit" class="register-button">Register</button>
+                  <button class="register-button" type="submit">Register</button>
                   </div>
                 </div>
 
                 <small>Have account? <a href="/login">Login Now!</a> </small>
-                                
-              </form>
     </div>
 </body>
 </html>

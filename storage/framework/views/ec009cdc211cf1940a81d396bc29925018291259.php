@@ -53,9 +53,10 @@
 				<div class="user-avatar">
 					<img class="img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" >
 				</div>
-				<h5 class="user-name">Dummy</h5>
-				<h6 class="user-email">dummyemail@gmail.com</h6>
+				<h5 class="user-name"><?php echo e(Auth::user()->name); ?></h5>
+				<h6 class="user-email"><?php echo e(Auth::user()->email); ?></h6>
 				<button type="button" id="submit" name="submit" class="btn btn-secondary mt-3"> <a href="/history" class="text-decoration-none text-white">History Order</a></button>
+				<button type="button" id="submit" name="submit" class="btn btn-secondary mt-3"> <a href="/log-out" class="text-decoration-none text-white">Log Out</a></button>
 			</div>
 		</div>
 	</div>

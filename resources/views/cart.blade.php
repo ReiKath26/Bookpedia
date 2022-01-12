@@ -65,8 +65,9 @@
 <div>
 
 <div class="title-page">My Cart</div>
-<div class="box"></div>
+<div class="box">
 
+</div>
 @if($thisCart)
 
 
@@ -141,6 +142,7 @@
 
 
 @endif
+
 
 
 @endsection
