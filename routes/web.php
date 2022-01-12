@@ -41,6 +41,8 @@ Route::get('/all-books/ordered-by-newest', [BookController::class, 'showBookNewe
 Route::get('/all-books/ordered-by-lowest-price', [BookController::class, 'showBookLowestPrice']);
 Route::get('/all-books/ordered-by-top-selling', [BookController::class, 'showBookTopSelling']);
 Route::get('/books/{id}', [BookController::class, 'detailAndRecomend']);
+Route::get('/search%20books', [BookController::class, 'searchBook']);
+Route::get('/all-books/price-search', [BookController::class, 'showBookBasedOnPrice']);
 
 Route::get('/contact-us', function(){
     return view('conttact');
@@ -57,6 +59,8 @@ Route::get('/success', function(){
 Route::get('/register', function(){
     return view('register');
 });
+
+Route::get('/log-out', [LoginController::class, 'logout']);
 
 Route::post('/register/regist',[registerController::class,'Register']);
 
