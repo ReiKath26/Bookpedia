@@ -9,6 +9,7 @@ use App\Http\Controllers\ShippingAddressController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,7 @@ Route::get('/register', function(){
     return view('register');
 });
 
+Route::post('/register/regist',[registerController::class,'Register']);
 
 Route::group(['middleware'=>'auth'], function(){
     Route::resource('cart', CartController::class);
