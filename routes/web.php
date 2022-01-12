@@ -48,6 +48,11 @@ Route::get('/success', function(){
     return view('successOrder');
 });
 
+Route::get('/register', function(){
+    return view('register');
+});
+
+
 Route::group(['middleware'=>'auth'], function(){
     Route::resource('cart', CartController::class);
     Route::patch('/empty/{id}', [CartController::class, 'empty']);

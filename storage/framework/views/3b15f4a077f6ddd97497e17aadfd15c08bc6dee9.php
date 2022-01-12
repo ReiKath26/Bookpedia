@@ -16,4 +16,4 @@
         <button class="history-button btn btn-secondary" type="submit"><a href="/history" class="text-decoration-none text-white">Order History</a></button>
     </div>
 </body>
-</html>
+</html><?php /**PATH C:\Users\kenis\Documents\BINUS\Web Programming\Bookpediaaa\resources\views/successOrder.blade.php ENDPATH**/ ?>

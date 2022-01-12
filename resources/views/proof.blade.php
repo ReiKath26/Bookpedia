@@ -17,7 +17,7 @@
             </div>
             @endif
 
-            <form action="/success" method="POST" enctype="multipart/form-data">
+            <form action="/success" method="GET" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
                 <div class="form-group">
