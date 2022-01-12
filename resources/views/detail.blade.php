@@ -44,39 +44,196 @@
 @endsection
 
 @section('page-content')
+<div class="container">
+  <div class="row">
+    <div class="col-4" id="book-detail-image">
+      <img class="card-img-top" alt="Picture" src={{$bookdata['img']}}>
+    </div>
 
-<img class="detail-image" src={{$book['img']}}>
+    <div class="col">
+      <div class="row">
+        <div class="col" id="bookdetail-writer-name">
+          <h4>{{$bookdata->author['name']}}</h4>
+          <h1>{{$bookdata['title']}}</h1>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#book-format" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Book Format</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#book-description" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Description</button>
+            </div>
+          </nav>
+        </div>
 
-<div class="d-flex">
+        <div class="col">
+          <div class="buy">
+            
+            <div class="card m-3" id="add-quantity-card" style="width: 20vw; height: 13vh">
+            
+              <form action={{ route('cartDetail.store')}} method="POST">
+                @csrf
+                <input type="hidden" name="book_id" value={{$bookdata['id']}}>
+                <div class="row">
+                  <div class="col">
+                    <label>Quantity</label>
+                  </div>
+                  <div class="col">
+                    <h6>Stock: {{$bookdata['stock']}}</h6>
+                  </div>
+                </div>
 
-<div class="header-detail">
-<h5>{{$book->author['name']}}</h5>
-<h3>{{$book['title']}}</h3>
-<h4>Description</h4>
-<h6>{{$book['description']}}
+                <div class="row">
+                  <input name="qty" type="number" placeholder="Enter quantity"><br>
+                </div>
+                
+                <button class="button btn-primary" type="submit">Add to My Cart</button>
+            
+              </form>
+            
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="book-format" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row">
+              <h4>Avaible Format</h4>
+              <div class="col">
+                <div class="card" id="book-format-choice">
+                  <h5>Hard Cover</h5>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card" id="book-format-choice">
+                <h5>E-book</h5>
+              </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="book-description" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="row">
+              <div class="col">
+                <h5>{{$bookdata['description']}}</h5>
+              </div>
+
+              <div class="col-5">
+                <div class="row">
+                  <div class="col">
+                    <h5>ISBN: </h5>
+                  </div>
+                  <div class="col">
+                    <h5>{{$bookdata['ISBN']}}</h5>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col">
+                    <h5>Publisher: </h5>
+                  </div>
+                  <div class="col">
+                    <h5><h5>{{$bookdata->publisher['name']}}</h5></h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <h5>Year: </h5>
+                  </div>
+                  <div class="col">
+                    <h5><h5>{{$bookdata['year']}}</h5></h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <h5>Language: </h5>
+                  </div>
+                  <div class="col">
+                    <h5><h5>{{$bookdata['language']}}</h5></h5>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <h5>Page: </h5>
+                  </div>
+                  <div class="col">
+                    <h5><h5>{{$bookdata['page']}}</h5></h5>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- More Recomendation -->
+  <div class="more-recommendation">
+    <div class="home-title d-flex">
+        <h2 class="fw-bold fs-1 mt-3">More Books Like This</h2>
+    </div>  
+
+    <div class="d-flex">
+    @foreach($bookRec as $data)
+      <div class="card" style="width: 18rem;">
+        <a href="/books/{{$data['id']}}" class="text-decoration-none text-black">
+          <img src="{{$data['img']}}" class="card-img-top" alt="Picture">
+            <div class="card-body">
+              <h5 class="card-title">{{$data['title']}}</h5>
+              <p class="card-text fs-5">Rp. {{$data['price']}}</p>
+            </div>
+        </a>
+      </div>
+    @endforeach
+  </div>
 </div>
 
-<div class="buy">
-
-<h6>Stock: {{$book['stock']}}</h6>
-
-<div class="card m-3" id="cat-card" style="width: 20vw; height: 10vh">
-
-<form action={{ route('cartDetail.store')}} method="POST">
-    @csrf
-    <input type="hidden" name="book_id" value={{$book['id']}}>
-    <label>Quantity: </label>
-    <input name="qty" type="number"><br>
-
-    <button class="button btn-primary" type="submit">Add to My Cart</button>
-
-    </form>
-
-</div>
+  </div>
 </div>
 
-</div>
+<style>
+  .container{
+    margin-top: 5vh;
+    color: #8F3F09;
+  }
+  #bookdetail-writer-name h1{
+    font-size: 64px;
+    margin-bottom: 4vh;
+  }
+  #bookdetail-writer-name h4{
+    margin-top: 3vh;
+    font-size: 35px;
+    margin-bottom: 3vh;
+    color: #C9C9C9;
+  }
+
+  #add-quantity-card{
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  #nav-tab{
+    color: #8F3F09;
+  }
+  .nav-link{
+    color: #8F3F09;
+  }
+  #nav-tabContent{
+    margin-top: 5vh;
+  }
+  #book-format-choice{
+    border-color: #8F3F09;
+    border-radius: 20px;
+    width: 15rem;
+    padding: 3vh;
+    align-items: center;
+  }
+</style>
 
 @endsection
 
