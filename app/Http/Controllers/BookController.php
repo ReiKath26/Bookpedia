@@ -28,6 +28,14 @@ class BookController extends Controller
         return view('allBooks', ['books'=>$selectBook, 'categories'=>$Categories]);
     }
 
+    function searchBook(Request $request)
+    {
+        $requestName = $request->search;
+        $selectBook = book::select('books.*')->where('books.tilte', '=', $requestName)->get();
+        $Categories = Categories::all();
+        return view('allBooks', ['books'=>$selectBook, 'categories'=>$Categories]);
+    }
+
     function showBookNewest(){
         $selectBook = book::orderByDesc('id')->get();
         $Categories = Categories::all();
@@ -42,6 +50,16 @@ class BookController extends Controller
 
     function showBookTopSelling(){
         $selectBook = book::orderBy('sold', 'desc')->get();
+        $Categories = Categories::all();
+        return view('allBooks', ['books'=>$selectBook, 'categories'=>$Categories]);
+    }
+
+    function showBookBasedOnPrice(Request $request)
+    {
+        $minPrice = $request->inputMinimalNumber;
+        $maxPrice = $request->inputMaxNumber;
+
+        $selectBook = book::select('books.*')->where('books.price', '<', $maxPrice)->where('books.price', '>', $minPrice)->get();
         $Categories = Categories::all();
         return view('allBooks', ['books'=>$selectBook, 'categories'=>$Categories]);
     }

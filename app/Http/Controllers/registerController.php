@@ -26,7 +26,7 @@ class registerController extends Controller
             'phone'=>$request->phoneNumber,
         ]);
 
-        return redirect('/');
+        return redirect('/login');
     }    
     
     

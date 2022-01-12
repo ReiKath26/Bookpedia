@@ -10,6 +10,7 @@ class transaction_detail extends Model
     use HasFactory;
 
     protected $table = 'transaction-details';
+    protected $guarded=['id'];
 
     public function head()
     {

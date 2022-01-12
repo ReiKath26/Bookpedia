@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\cart;
+use App\Models\cart_detail;
 use App\Models\payment;
 use App\Models\shipping;
 use App\Models\shipping_address;
@@ -20,6 +21,9 @@ class TransactionController extends Controller
 
         if($thisCart)
         {
+            $thisCart->status = "Done";
+            $thisCart->save();
+            
             $thisShippingAddress = shipping_address::where('user', $user->id)
                                     ->where('status', 'selected')->first();
             $thisPaymentMethod = payment::where('status', 'selected')->first();
@@ -32,7 +36,6 @@ class TransactionController extends Controller
                 {
                     if($thisShipping)
                     {
-                        $thisCart['status'] = 'done';
                         $total = $thisCart->total + $thisPaymentMethod->admin_fee + $thisShipping->shipment_price;
                         $input['user_id'] = $user->id;
                         $input['shipping_id'] = $thisShipping->id;
@@ -40,7 +43,17 @@ class TransactionController extends Controller
                         $input['shipping_address'] = $thisShippingAddress->id;
                         $input['total'] = $total;
                         $input['cart_id'] = $thisCart->id;
+                        $data = cart_detail::where('cart_id', $thisCart->id)->get();
                         $order_head = transaction_head::create($input);
+
+                        foreach($data as $data)
+                        {
+                            $input['transaction_id'] = $order_head->id;
+                            $input['book_id'] = $data->book_id;
+                            $input['qty'] = $data->qty;
+                            $input['subtotal'] = $data->subtotal;
+                            $order_detail = transaction_detail::create($input);
+                        }
                         return redirect()->intended('/payment-proof')->with('success', 'Order awaiting payment');
                     }
 
@@ -77,7 +90,7 @@ class TransactionController extends Controller
     public function historyDetail($id)
     {
         $head = transaction_head::find($id);
-        $details = transaction_detail::where('transaction_id', $id)->get();
+        $details = transaction_detail::where('transaction_id', '=',$id)->get();
 
         return view('historyDetail', ['head' => $head, 'details' => $details]);
     }
