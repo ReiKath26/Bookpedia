@@ -70,30 +70,10 @@
             Books
           </button>
           <div class="collapse" id="booksMenu">
-            <a class="dropdown-item" href="#">Book Category</a>
+            @foreach ($categories as $data)
+              <a class="dropdown-item" href="/all-books/categories-{{$data['name']}}">{{$data['name']}}</a>
+            @endforeach()
           </div>
-
-          <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#comicMenu" aria-expanded="false" aria-controls="collapseExample" id="selection">
-            Comics
-          </button>
-          <div class="collapse" id="comicMenu">
-            <a class="dropdown-item" href="#">Comic Category</a>
-          </div>
-
-          <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#ebookMenu" aria-expanded="false" aria-controls="collapseExample" id="selection">
-            E-book
-          </button>
-          <div class="collapse" id="ebookMenu">
-            <a class="dropdown-item" href="#">E-book Category</a>
-          </div>
-
-          <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#referenceMenu" aria-expanded="false" aria-controls="collapseExample" id="selection">
-            Refence Book
-          </button>
-          <div class="collapse" id="referenceMenu">
-            <a class="dropdown-item" href="#">Reference Book Category</a>
-          </div>
-
         </div>
       </div>
       
@@ -113,11 +93,11 @@
       <div class="row">
         <h4>Stock</h4>
         <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#avaibilityMenu" aria-expanded="false" aria-controls="collapseExample" id="selection">
-          Avaible Only
+          Choose Avaibility
         </button>
         <div class="collapse" id="avaibilityMenu">
-          <a class="dropdown-item" href="#">Avaible</a>
-          <a class="dropdown-item" href="#">Not Avaible</a>
+          <a class="dropdown-item" href="/all-books">All</a>
+          <a class="dropdown-item" href="/all-books/stock-avaible-only">Avaible Only</a>
         </div>
       </div>
     </div>
@@ -127,7 +107,7 @@
         @foreach($books as $data)
         <div class="col">
           <a href="/books/{{$data['id']}}" class="card m-3" id="cat-card" style="width: 12vw; height: 45vh">
-            <div class="card-body">
+            <div class="card-body" id="card-display-books">
               <img class = image-cat src={{$data['img']}}>
               <h5 class="category-text ">{{$data['title']}}</h5>
               <h6 class="category-subtext">Rp. {{$data['price']}}</h6>
@@ -151,11 +131,45 @@
   #title-allbooks h2{
     color: #8F3F09;
   }
+
+  #card-display-books{
+    align-content: center;
+    justify-content: space-around;
+    color: #8F3F09;
+  }
+  #card-display-books a{
+    text-decoration: none;
+  }
+  #card-display-books h5{
+    text-align: center;
+    font-size:23px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  #card-display-books h6{
+    text-align: center;
+    font-size:18px;
+    text-decoration: none;
+  }
+  #card-display-books img{
+    width: 100%;
+    height: 280px;
+    justify-content: center;
+  }
+
   #book-order-menu{
     color: #8F3F09;
+    font-weight: bold;
     border-radius: 0;
     border-color: #FCCC76;
     background-color: white;
+  }
+  #orderby-menu a{
+    font-weight: bold;
+  }
+  #orderby-menu a:active{
+    background-color: #E9B98A;
+    color: white;
   }
   /* .no-gutters {
     margin-right: 0;
@@ -177,7 +191,8 @@
   }
   .row h4{
     color: #8F3F09;
-    margin-top: 2vh;
+    margin-top: 3vh;
+    font-weight: bold;
   }
   
   .form-control{
@@ -193,12 +208,45 @@
     border-color:#E9B98A;
   }
 
-  #selection{
-    background-color: white;
-    color: #D47415;
-    outline-color: #9F2F00;
+  #booksMenu a{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 20px;
+    color: #8F3F09;
+  }
+  #booksMenu a:active{
+    background-color: #E9B98A;
+    color: white;
+  }
+  #avaibilityMenu a{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 20px;
+    color: #8F3F09;
+  }
+  #avaibilityMenu a:active{
+    background-color: #E9B98A;
+    color: white;
   }
 
+  #selection{
+    margin-left: 1vh;
+    margin-right: 1vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    justify-content: center
+    width: 180px;
+    color: #D47415;
+    font-weight: bold;
+    outline-color: #9F2F00;
+  }
+  #selection:hover{
+    background-color: #D47415;
+    color: white;
+  }
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
