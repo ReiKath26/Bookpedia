@@ -36,14 +36,14 @@
 
                 <label class="lbl" for="address">Phone Number:</label><br>
                 <input type="text" class="edit-input" id="number-check" name="phoneNumber" required placeholder="Phone Number at least 10 numbers"> <br>
-                                
-              </form>
 
               <div class="container">
-                  <div class="center">
-                  <button class="register-button" type="submit">Register</button>
-                  </div>
+                <div class="center">
+                <button class="register-button" type="submit">Register</button>
                 </div>
+              </div>
+                                
+              </form>
 
                 <small>Have account? <a href="/login">Login Now!</a> </small>
     </div>

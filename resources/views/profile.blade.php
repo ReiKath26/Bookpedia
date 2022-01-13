@@ -55,7 +55,10 @@
 				</div>
 				<h5 class="user-name">{{Auth::user()->name}}</h5>
 				<h6 class="user-email">{{Auth::user()->email}}</h6>
+
+				@if(Auth::user()->status=="user")
 				<button type="button" id="submit" name="submit" class="btn btn-secondary mt-3"> <a href="/history" class="text-decoration-none text-white">History Order</a></button>
+				@endif
 				<button type="button" id="submit" name="submit" class="btn btn-secondary mt-3"> <a href="/log-out" class="text-decoration-none text-white">Log Out</a></button>
 			</div>
 		</div>

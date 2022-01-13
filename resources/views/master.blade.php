@@ -276,6 +276,13 @@
           }
 
 
+          .welcome-dashboard
+          {
+            color: #8F3F09;
+            font-size: 3vw;
+            margin-top: 50px;
+          }
+
           .box
           {
             width: 20vw;

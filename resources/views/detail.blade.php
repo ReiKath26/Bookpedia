@@ -213,6 +213,11 @@
     color: #C9C9C9;
   }
 
+  .not-logged-in:focus-visible
+  {
+    color: #C9C9C9;
+  }
+
   .not-logged-in::selection
   {
     color: #C9C9C9;

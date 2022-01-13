@@ -39,7 +39,7 @@
                     @if($thisShippingAddress)
                       <tr>
                         <td>
-                          {{ $thisShippingAddress->receiver_name }}
+                          {{$thisShippingAddress->receiver_name }}
                         </td>
                         <td>
                           {{ $thisShippingAddress->address }}<br />

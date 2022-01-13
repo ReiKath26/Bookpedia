@@ -9,7 +9,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col">
-                Shipping Address
+                Shipping 
               </div>
               <div class="col-auto">
                 <a href="{{ URL::to('checkout') }}" class="btn btn-sm btn-danger">

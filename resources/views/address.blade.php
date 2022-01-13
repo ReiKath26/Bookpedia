@@ -47,9 +47,9 @@
                         @method('patch')
                         @csrf()
                         @if($data->status == 'selected')
-                        <button type="submit" class="btn btn-primary btn-sm" disabled>Select</button>
+                        <button type="submit" class="btn btn-primary btn-sm" disabled>Selected</button>
                         @else
-                        <button type="submit" class="btn btn-primary btn-sm">Select/button>
+                        <button type="submit" class="btn btn-primary btn-sm">Switch Address</button>
                         @endif
                       </form>
                     </td>

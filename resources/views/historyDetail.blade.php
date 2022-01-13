@@ -80,10 +80,10 @@
                 <div class="card p-3">
                     <div class="d-flex justify-content-between align-items-end">
                         <div class="d-flex justify-content-between">
-                            <img src="{{ $detail->book->img }}" height="150px" alt="">
+                            <img src="{{ $detail->img }}" height="150px" alt="">
                             <div class="ms-3">
-                                <h5>{{ $detail->book->title }}</h5>
-                                <p>Rp. {{ $detail->book->price }} x {{ $detail->qty }}</p>
+                                <h5>{{ $detail->book_title }}</h5>
+                                <p>Rp. {{ $detail->price }} x {{ $detail->qty }}</p>
                             </div>
                         </div>
                         <a class="text-decoration-none text-white px-3 py-1 rounded" href="/books/{{ $detail->book->id }}" style="background-color: brown">Beli Lagi</a>
