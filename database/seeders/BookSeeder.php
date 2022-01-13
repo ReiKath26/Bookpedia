@@ -207,7 +207,8 @@ class BookSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            ['name'=>'Dummy', 'email'=>'dummyemail@gmail.com', 'password'=>bcrypt('dummydummy21'), 'address'=>'Jl. Dummy dum dum', 'phone'=>'0896522222']
+            ['name'=>'Dummy', 'email'=>'dummyemail@gmail.com', 'password'=>bcrypt('dummydummy21'), 'address'=>'Jl. Dummy dum dum', 'phone'=>'0896522222', 'status'=>'user'],
+            ['name'=>'Admin', 'email'=>'adminlogin@gmail.com', 'password'=>bcrypt('adminlogin'), 'address'=>'none', 'phone'=>'07777777777', 'status'=>'admin']
         ]);
     }
 }

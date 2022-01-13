@@ -30,7 +30,7 @@ class CreateBooksTable extends Migration
             $table->integer('page');
             $table->string('img');
             $table->integer('stock');
-            $table->integer('sold');
+            $table->integer('sold')->default(0);
             $table->timestamps();
         });
     }
