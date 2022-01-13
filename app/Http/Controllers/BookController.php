@@ -71,6 +71,7 @@ class BookController extends Controller
         return view('home', ['books'=>$Books]);
     }
 
+
     function detail($id)
     {
         if(book::where('id', $id)->exists())

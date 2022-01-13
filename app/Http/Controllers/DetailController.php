@@ -44,6 +44,7 @@ class DetailController extends Controller
             $is_detail->updateDetail($is_detail, $qty, $price);
             $thisCart->updateTotal($thisCart, $subtotal);
             $book->stock -= $qty;
+            $book->save();
         }
 
         else
@@ -56,6 +57,7 @@ class DetailController extends Controller
 
             $is_detail = cart_detail::create($input);
             $book->stock -= $qty;
+            $book->save();
             $thisCart->updateTotal($thisCart, $subtotal);
         }
 
@@ -96,6 +98,7 @@ class DetailController extends Controller
         if($thisDetail->delete())
         {
             $book->stock += $thisDetail->qty;
+            $book->save();
             return back()->with('success', 'Item deleted');
         }
 

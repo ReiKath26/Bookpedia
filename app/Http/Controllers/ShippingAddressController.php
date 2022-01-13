@@ -39,7 +39,7 @@ class ShippingAddressController extends Controller
     {
         $newshippingaddress = shipping_address::findOrFail($id);
         $newshippingaddress->update(['status'=>'selected']);
-        shipping_address::where('id', '!=', $newshippingaddress->id)->update(['status', 'not']);
+        shipping_address::where('id', '!=', $newshippingaddress->id)->update(['status'=>'not']);
         return view('checkout');
     }
 }

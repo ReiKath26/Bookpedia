@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\book;
 use App\Models\cart;
 use App\Models\cart_detail;
 use App\Models\payment;
@@ -48,9 +49,13 @@ class TransactionController extends Controller
 
                         foreach($data as $data)
                         {
-                            $input['transaction_id'] = $order_head->id;
                             $input['book_id'] = $data->book_id;
-                            $input['qty'] = $data->qty;
+                            $thisBook = book::where('id', $data->book_id)->first();
+                            $input['transaction_id'] = $order_head->id;
+                            $input['book_title'] = $thisBook->title;
+                            $input['price'] = $thisBook->price;
+                            $input['qty'] = $data->qty; 
+                            $input['img'] = $thisBook->img;
                             $input['subtotal'] = $data->subtotal;
                             $order_detail = transaction_detail::create($input);
                         }
