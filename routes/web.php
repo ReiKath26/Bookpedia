@@ -27,7 +27,7 @@ Route::get('/', [BookController::class, 'bookShow']);
 
 Route::get('/login', function(){
     return view('login');
-})->middleware('guest');
+})->middleware('guest')->name("login");
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/about-us', function(){

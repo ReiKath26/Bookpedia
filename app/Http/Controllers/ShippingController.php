@@ -88,6 +88,6 @@ class ShippingController extends Controller
         $shippingmethod = shipping::findOrFail($id);
         $shippingmethod->update(['status'=>'selected']);
         shipping::where('id', '!=', $shippingmethod->id)->update(['status'=>'no']);
-        return view('checkout');
+        return redirect("/checkout");
     }
 }

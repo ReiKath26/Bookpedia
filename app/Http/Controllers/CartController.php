@@ -16,14 +16,8 @@ class CartController extends Controller
         $user = $request->user();
         $thisCart = cart::where('customer_id', $user->id)->where('status', 'active')->first();
 
-        if($thisCart)
-        {
+        
             return view('cart', ['thisCart'=>$thisCart]);
-        }
-        else
-        {
-            abort(404);
-        }
     }
 
     function empty($id)
